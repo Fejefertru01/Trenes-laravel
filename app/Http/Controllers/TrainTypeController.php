@@ -21,7 +21,7 @@ class TrainTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('trainTypes/create', ['trainTypes' => TrainType::all()]);
     }
 
     /**
@@ -29,7 +29,11 @@ class TrainTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $trainType = new TrainType;
+        $trainType->type = $request->input('type');
+        $trainType->save();
+        
+        return redirect('trainTypes');
     }
 
     /**
