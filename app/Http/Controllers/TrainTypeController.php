@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TrainType;
 
 class TrainTypeController extends Controller
 {
@@ -11,7 +12,8 @@ class TrainTypeController extends Controller
      */
     public function index()
     {
-        //
+        $trainTypes =TrainType::all();
+        return view('trainTypes/index',['trainTypes'=>$trainTypes]);
     }
 
     /**
