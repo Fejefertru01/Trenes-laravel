@@ -58,8 +58,6 @@ class TicketTypeController extends Controller
     public function update(Request $request, string $id)
     {
         $ticketType = TicketType::find($id);
-
-
         $ticketType->type = $request->input('type');
         $ticketType->save();
         return redirect('ticketTypes');
@@ -71,6 +69,7 @@ class TicketTypeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        TicketType::find($id)->delete();
+        return redirect('ticketTypes');
     }
 }

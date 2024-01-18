@@ -83,6 +83,7 @@ class TicketController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Ticket::find($id)->delete();
+        return redirect('tickets');
     }
 }

@@ -7,6 +7,7 @@
     <title>Tickets</title>
 </head>
 <body>
+    <h1>TICKETS</h1>
     <a href="{{route('tickets.create')}}">Crear ticket</a>
     <table>
             <thead>
@@ -30,6 +31,13 @@
                         <td><form action="{{ route('tickets.edit', ['ticket' => $ticket->id]) }}">
                             <input type="submit" value="Editar">
                         </form>
+                        </td>
+                        <td>
+                            <form action="{{ route('tickets.destroy', ['ticket' => $ticket->id]) }}" method="post">
+                                @csrf
+                                {{ method_field('DELETE') }}
+                                <input type="submit" value="Borrar">
+                            </form>
                         </td>
                     </tr>
                 @endforeach
