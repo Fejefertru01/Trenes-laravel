@@ -30,7 +30,14 @@ class TrainController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $train = new Train;
+        $train->name = $request->input('name');
+        $train->passengers = $request->input('passengers');
+        $train->year = $request->input('year');
+        $train->train_type_id = $request->input('train_type_id');
+        $train->save();
+
+        return redirect('trains');
     }
 
     /**
@@ -38,7 +45,7 @@ class TrainController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('trains/show', ['train' => Train::find($id)]);
     }
 
     /**

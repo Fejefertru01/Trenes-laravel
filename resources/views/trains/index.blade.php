@@ -24,6 +24,10 @@
                         <td>{{ $train->passengers }}</td>
                         <td>{{ $train->year }}</td>
                         <td>{{ $train->train_type->type }}</td>
+                        <td><form action="{{ route('trains.show', ['train' => $train->id]) }}">
+                            <input type="submit" value="Ver">
+                        </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

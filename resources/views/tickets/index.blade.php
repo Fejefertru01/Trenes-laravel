@@ -22,8 +22,15 @@
                     <tr>
                         <td>{{ $ticket->date }}</td>
                         <td>{{ $ticket->price }}</td>
-                        <td>{{ $ticket->train_name->name }}</td>
+                        <td>{{ $ticket->train->name }}</td>
                         <td>{{ $ticket->ticket_type->type }}</td>
+                        <td><form action="{{ route('tickets.show', ['ticket' => $ticket->id]) }}">
+                            <input type="submit" value="Ver">
+                        </form>
+                        <td><form action="{{ route('tickets.edit', ['ticket' => $ticket->id]) }}">
+                            <input type="submit" value="Editar">
+                        </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

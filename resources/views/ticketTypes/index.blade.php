@@ -18,6 +18,13 @@
                 @foreach ($ticketTypes as $ticketType)
                     <tr>
                         <td>{{ $ticketType->type }}</td>
+                        <td><form action="{{ route('ticketTypes.show', ['ticketType' => $ticketType->id]) }}">
+                            <input type="submit" value="Ver">
+                        </form>
+                        </td>
+                        <td><form action="{{ route('ticketTypes.edit', ['ticketType' => $ticketType->id]) }}">
+                            <input type="submit" value="Editar">
+                        </form>
                     </tr>
                 @endforeach
             </tbody>
