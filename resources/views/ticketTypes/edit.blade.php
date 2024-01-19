@@ -14,5 +14,7 @@
         <input type="text" name="type" value="{{ $ticketType->type }}">
         <input type="submit" value="Editar">
     </form>
+
+    <a href="{{ route('ticketTypes.index') }}">Volver a Tipos de tickets</a><br>
 </body>
 </html>

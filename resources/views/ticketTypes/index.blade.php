@@ -19,13 +19,15 @@
                 @foreach ($ticketTypes as $ticketType)
                     <tr>
                         <td>{{ $ticketType->type }}</td>
-                        <td><form action="{{ route('ticketTypes.show', ['ticketType' => $ticketType->id]) }}">
+                        <td>
+                            <form action="{{ route('ticketTypes.show', ['ticketType' => $ticketType->id]) }}">
                             <input type="submit" value="Ver">
-                        </form>
+                            </form>
                         </td>
-                        <td><form action="{{ route('ticketTypes.edit', ['ticketType' => $ticketType->id]) }}">
+                        <td>
+                            <form action="{{ route('ticketTypes.edit', ['ticketType' => $ticketType->id]) }}">
                             <input type="submit" value="Editar">
-                        </form>
+                            </form>
                         </td>
                         <td>
                             <form action="{{ route('ticketTypes.destroy', ['ticketType' => $ticketType->id]) }}" method="post">
@@ -38,6 +40,9 @@
                 @endforeach
             </tbody>
         </table>
-    
+
+    <a href="{{ route('trains.index') }}">Trenes</a>
+    <a href="{{ route('trainTypes.index') }}">Tipos de trenes</a>
+    <a href="{{ route('tickets.index') }}">Tickets</a>
 </body>
 </html>

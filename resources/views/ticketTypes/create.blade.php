@@ -13,5 +13,7 @@
         <input type="text" name="type">
         <input type="submit" value="Crear">
     </form>
+
+    <a href="{{ route('ticketTypes.index') }}">Volve a Tipos de tickets</a><br>
 </body>
 </html>

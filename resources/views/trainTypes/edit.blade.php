@@ -14,5 +14,6 @@
         <input type="text" name="type" value="{{ $trainType->type }}">
         <input type="submit" value="Editar">
     </form>
+    <a href="{{ route('trainTypes.index') }}">Volver a tipos trenes</a>
 </body>
 </html>

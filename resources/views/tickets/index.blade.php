@@ -25,12 +25,15 @@
                         <td>{{ $ticket->price }}</td>
                         <td>{{ $ticket->train->name }}</td>
                         <td>{{ $ticket->ticket_type->type }}</td>
-                        <td><form action="{{ route('tickets.show', ['ticket' => $ticket->id]) }}">
+                        <td>
+                            <form action="{{ route('tickets.show', ['ticket' => $ticket->id]) }}">
                             <input type="submit" value="Ver">
-                        </form>
-                        <td><form action="{{ route('tickets.edit', ['ticket' => $ticket->id]) }}">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{{ route('tickets.edit', ['ticket' => $ticket->id]) }}">
                             <input type="submit" value="Editar">
-                        </form>
+                            </form>
                         </td>
                         <td>
                             <form action="{{ route('tickets.destroy', ['ticket' => $ticket->id]) }}" method="post">
@@ -43,6 +46,9 @@
                 @endforeach
             </tbody>
         </table>
+    <a href="{{ route('trains.index') }}">Trenes</a>
+    <a href="{{ route('trainTypes.index') }}">Tipos de trenes</a>
+    <a href="{{ route('ticketTypes.index') }}">Tipos de tickets</a><br>
     
 </body>
 </html>

@@ -25,5 +25,6 @@
             </tr>
         </tbody>
     </table>
+    <a href="{{ route('tickets.index') }}">Volver a Tickets</a>
 </body>
 </html>

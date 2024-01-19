@@ -32,7 +32,7 @@
             @endforeach
         </select>
         <input type="submit" value="Editar">
-
     </form>
+    <a href="{{ route('tickets.index') }}">Volver a tickets</a>
 </body>
 </html>

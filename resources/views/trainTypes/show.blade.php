@@ -19,5 +19,6 @@
             </tr>
         </tbody>
     </table>
+    <a href="{{ route('trainTypes.index') }}">Volver a tipos trenes</a>
 </body>
 </html>

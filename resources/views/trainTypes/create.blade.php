@@ -13,5 +13,6 @@
         <input type="text" name="type">
         <input type="submit" value="Crear">
     </form>
+    <a href="{{ route('trainTypes.index') }}">Volver a tipos trenes</a>
 </body>
 </html>

@@ -19,5 +19,6 @@
             </tr>
         </tbody>
     </table>
+    <a href="{{ route('ticketTypes.index') }}">Volver a tipos de tickets</a>
 </body>
 </html>

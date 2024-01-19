@@ -25,5 +25,6 @@
             </tr>
         </tbody>
     </table>
+    <a href="{{ route('trains.index') }}">Volver a trenes</a>
 </body>
 </html>

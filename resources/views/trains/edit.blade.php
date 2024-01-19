@@ -26,5 +26,6 @@
         </select>
         <input type="submit" value="Editar">
     </form>
+    <a href="{{ route('trains.index') }}">Volver a trenes</a>
 </body>
 </html>
