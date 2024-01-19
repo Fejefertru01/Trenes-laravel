@@ -7,8 +7,9 @@
     <title>Tipo de Tickets</title>
 </head>
 <body>
+    <h1>TIPOS DE TICKETS</h1>
     <a href="{{route('ticketTypes.create')}}">Crear tipo de ticket</a>
-    <table>
+    <table border="1px solid black">
             <thead>
                 <tr>
                     <th>Tipo</th>
@@ -18,6 +19,21 @@
                 @foreach ($ticketTypes as $ticketType)
                     <tr>
                         <td>{{ $ticketType->type }}</td>
+                        <td><form action="{{ route('ticketTypes.show', ['ticketType' => $ticketType->id]) }}">
+                            <input type="submit" value="Ver">
+                        </form>
+                        </td>
+                        <td><form action="{{ route('ticketTypes.edit', ['ticketType' => $ticketType->id]) }}">
+                            <input type="submit" value="Editar">
+                        </form>
+                        </td>
+                        <td>
+                            <form action="{{ route('ticketTypes.destroy', ['ticketType' => $ticketType->id]) }}" method="post">
+                                @csrf
+                                {{ method_field('DELETE') }}
+                                <input type="submit" value="Borrar">
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
